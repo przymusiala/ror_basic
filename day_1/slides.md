@@ -700,4 +700,3 @@ Zwiększanie o daną wartość
 
 # Zadanie #
 ## Stworzyć post i dodać do niego komentarz przez konsolę ##
-
