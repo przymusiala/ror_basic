@@ -12,5 +12,4 @@
   * HTML i kaskadowe arkusze stylów
   * Walidacja danych wejściowych
   * Testy jednostkowe
-  * Rozwijanie własnych widoków
-  * Helpery - formatowanie walut
+  * Rozwijanie własnych widoków, helpery
