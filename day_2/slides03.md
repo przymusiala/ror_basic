@@ -182,6 +182,7 @@
 # uzupełnianie bazy testowej danymi #
 
 <!SLIDE smaller transition=fade>
+      
       @@@ ruby
         # test/fixtures/products.yml
 
