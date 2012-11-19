@@ -2,16 +2,18 @@
 
 # Dzień drugi #
 
-<!SLIDE bullets incremental transition=fade>
+<!SLIDE smaller bullets incremental transition=fade>
 
 # Plan na dziś #
-
-  * HTML i kaskadowe arkusze stylów
+  
   * Podstawy systemu kontroli wersji GIT
-  * Walidacja danych wejściowych
+  
+  * Początek prac nad księgarnią
   * Tworzenie panelu do zarządzania produktami
-  * HTML i CSS (layouty) c.d
-  * Formatowanie walut
-  * Sesja użytkownika
-  * Metody prywatne
-  * Tworzenie relacji
+  * HTML i kaskadowe arkusze stylów
+  
+  * Walidacja danych wejściowych
+  * Testy jednostkowe
+  
+  * Rozwijanie własnych widoków
+  * Helpery - formatowanie walut
