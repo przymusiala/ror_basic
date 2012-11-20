@@ -3,10 +3,10 @@
 
 # Uruchomienie
 
-$ git clone git://github.com/przymusiala/ror_basic.git
-$ cd ror_basic
-$ bundle install
-$ showoff serve
+  $ git clone git://github.com/przymusiala/ror_basic.git
+  $ cd ror_basic
+  $ bundle install
+  $ showoff serve
 
 # Przeglądanie slajdów
 
