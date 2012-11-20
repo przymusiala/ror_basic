@@ -19,16 +19,14 @@
       # config/routes.rb
 
       Ksiegarnia::Application.routes.draw do 
-          get "store/index"
-          resources :products
-          
-          # You can have the root of your site routed with "root"
-          # just remember to delete public/index.html.
-          # root :to => 'welcome#index'
+        get "store/index"
+        resources :products
+
         root to: 'store#index', as: 'store'
       end
 
     $ rm public/index.html
+    $ rake routes
 
 <!SLIDE transition=fade>
 
@@ -53,10 +51,10 @@
 <!SLIDE smaller transition=fade>
 
     @@@ html
-      # app/views/store/index.html.erb
+      <!-- app/views/store/index.html.erb  -->
 
       <% if notice %>
-        <p id="notice"><%=   notice %></p>
+        <p id="notice"><%= notice %></p>
       <% end %>
 
       <h1>Nasze książki</h1>
@@ -79,7 +77,7 @@
 <!SLIDE smaller transition=fade>
 
     @@@ html
-      # app/views/layouts/application.html.erb
+      <!-- app/views/layouts/application.html.erb -->
 
       <body class="<%= controller.controller_name %>">
         <div id="banner">
@@ -109,7 +107,7 @@
 
 ## Trochę skomplikowane ##
     @@@ html
-      # app/views/store/index.html.erb
+      <!-- app/views/store/index.html.erb -->
 
       <span class="price">
         <%= sprintf("$%0.02f", product.price) %>
@@ -119,7 +117,7 @@
 
 ## Tak już dużo lepiej ##
     @@@ html
-      # app/views/store/index.html.erb
+      <!-- app/views/store/index.html.erb -->
 
       <span class="price">
         <%= number_to_currency(product.price) %>

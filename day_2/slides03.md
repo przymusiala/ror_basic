@@ -143,7 +143,7 @@
 
 <!SLIDE transition=fade>
 
-# URLem mogą prowadzić tylko do obrazków #
+# URLe mogą prowadzić tylko do obrazków #
 
 <!SLIDE small transition=fade>
 
@@ -184,8 +184,8 @@
 
 <!SLIDE transition=fade>
 
-# Nie marnujmy czasu na ciągłe #
-# uzupełnianie bazy testowej danymi #
+## Nie marnujmy czasu na ciągłe ##
+## uzupełnianie bazy testowej danymi ##
 
 <!SLIDE smaller transition=fade>
       
