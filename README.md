@@ -1,5 +1,4 @@
-# Prezentacja do szkolenia z Ruby on Rails
-# - poziom podstawowy
+# Prezentacja do szkolenia z Ruby on Rails - podstawy
 ### Na podstawie Agile Web Development with Rails
 
 # Uruchomienie

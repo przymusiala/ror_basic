@@ -147,3 +147,72 @@
           <li><%= item.product.title %></li>
         <% end %>
       </ul>
+
+<!SLIDE transition=fade>
+
+# Grupowanie produktów
+
+<!SLIDE commandline incremental small transition=fade>
+
+# Dodajmy liczebność do pozycji koszyka
+    
+    $ rails generate migration add_quantity_to_line_items quantity:integer
+
+<!SLIDE smaller transition=fade>
+
+# Zmiana migracji
+
+    @@@ ruby
+      class AddQuantityToLineItems < ActiveRecord::Migration
+        def change
+          add_column :line_items,
+            :quantity,
+            :integer,
+            default: 1
+        end
+      end
+
+    $ rake db:migrate
+
+<!SLIDE smaller transition=fade>
+
+# Zliczmy to teraz w modelu...
+    
+    @@@ ruby
+      # app/models/cart.rb
+      
+      def add_product(p_id)
+
+        current_item = line_items.find_by_product_id(p_id)
+      
+        if current_item
+          current_item.quantity += 1
+        else
+          current_item = line_items.build(product_id: p_id)
+        end
+        
+        # return current_item
+        current_item
+      end
+
+<!SLIDE smaller transition=fade>
+
+# ... i poprawmy kontroler
+
+    @@@ ruby
+      # app/controllers/line_items_controller.rb
+      
+      def create
+        @cart = current_cart
+        product = Product.find(params[:product_id])
+      ➤ @line_item = @cart.add_product(product.id)
+        @line_item.product = product
+
+        #.....
+      end
+
+<!SLIDE commandline incremental transition=fade>
+
+# Czas na reset :)
+
+    $ rake db:migrate:reset
