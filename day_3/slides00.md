@@ -2,7 +2,7 @@
 
 # Dzień trzeci #
 
-<!SLIDE transition=fade>
+<!SLIDE small transition=fade>
 
 # Plan na dziś #
   

@@ -4,6 +4,6 @@
 
 <!SLIDE transition=fade>
 
-#
+# Grupowanie produktów
 
 <!SLIDE transition=fade>

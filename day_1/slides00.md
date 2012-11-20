@@ -1,5 +1,10 @@
 <!SLIDE title-slide transition=fade>
 
+# Ruby on Rails #
+## dla początkujących ##
+
+<!SLIDE title-slide transition=fade>
+
 # Dzień pierwszy #
 
 <!SLIDE smaller bullets incremental transition=fade>

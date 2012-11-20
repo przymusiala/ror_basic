@@ -49,8 +49,9 @@
 
 # Edycja migracji 
 
-    @@@ Ruby
+    @@@ ruby
       # app/models/product.rb
+
       class CreateProducts < ActiveRecord::Migration 
         def change
           create_table :products do |t| 
@@ -64,7 +65,7 @@
       end
 
 
-<!SLIDE small transition=fade>
+<!SLIDE commandline incremental transition=fade>
 
 # Załadowanie migracji
   
@@ -75,7 +76,7 @@
 
 # Stylowanie widoków
 
-<!SLIDE small transition=fade>
+<!SLIDE bullets incremental transition=fade>
 
 
 * [Formularz] (assets/_form.html.erb) umieszczamy w app/views/products
