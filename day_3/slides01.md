@@ -88,7 +88,6 @@
 <!SLIDE smaller transition=fade>
 
 # Dodajmy przycisk dodania do koszyka
-
     @@@ html
       <!-- app/views/store/index.html.erb -->
 
@@ -106,7 +105,7 @@
           </div>
         </div>
       <% end %>
-
+### [Arkusz css] (assets/store.css.scss)
 <!SLIDE smaller transition=fade>
 
 # Wrzucamy produkt do koszyka
@@ -142,7 +141,7 @@
         <p id="notice"><%= notice %></p>
       <% end %>
 
-      <h2>Your Pragmatic Cart</h2>
+      <h2>Twoja księgarnia</h2>
       <ul>    
         <% @cart.line_items.each do |item| %>
           <li><%= item.product.title %></li>
