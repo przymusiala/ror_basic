@@ -29,7 +29,11 @@
       validates :username, :presence => true
       validates :username, :uniqueness => true
 
-<!SLIDE ertransition=fade>
+<!SLIDE transition=fade>
+
+# Trochę zabawy #
+
+<!SLIDE transition=fade>
 
 # Stan obecny - wolna amerykanka #
     @@@ ruby
@@ -46,10 +50,10 @@
 
 # Wymagania klienta #
 
-  * nie można dodać produktu z pustym tytułem, opisem i bez url'a obrazka
-  * tytuły muszą być unikalne
-  * cena musi być większa od zera ;)
-  * obrazki mogą być tylko w formacie gif|jpg|png
+  * Nie można dodać produktu z pustym tytułem, opisem i bez url'a obrazka
+  * Tytuły muszą być unikalne
+  * Cena musi być większa od zera ;)
+  * Obrazki mogą być tylko w formacie gif|jpg|png
 
 <!SLIDE code smaller transition=fade>
 
@@ -158,6 +162,8 @@
 <!SLIDE smaller transition=fade>
 
     @@@ ruby
+      # test/unit/product_test.rb
+
       test "URLem mogą prowadzić tylko do obrazków" do
         ok = %w{ obr.gif obr.jpg obr.png obr.JPG obr.Jpg
                  http://a.b.c/x/y/z/obr.gif }
