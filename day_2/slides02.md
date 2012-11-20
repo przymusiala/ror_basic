@@ -79,9 +79,9 @@
 <!SLIDE bullets incremental transition=fade>
 
 
-* [Formularz] (assets/_form.html.erb) umieszczamy w app/views/products
-* [Style] (assets/products.css.scss) umieszczamy w app/assets/stylesheets
-* [Listing] (assets/index.html.erb) umieszczamy w app/views/products
+* [Formularz] (https://github.com/przymusiala/ror_basic/blob/master/assets/_form.html.erb) umieszczamy w app/views/products
+* [Style] (https://github.com/przymusiala/ror_basic/blob/master/assets/products.css.scss) umieszczamy w app/assets/stylesheets
+* [Listing] (https://github.com/przymusiala/ror_basic/blob/master/assets/index.html.erb) umieszczamy w app/views/products
 
 <!SLIDE bullets incremental small transition=fade>
 

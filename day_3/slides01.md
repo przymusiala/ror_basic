@@ -105,7 +105,7 @@
           </div>
         </div>
       <% end %>
-### [Arkusz css] (assets/store.css.scss)
+### [Arkusz css] (https://github.com/przymusiala/ror_basic/blob/master/assets/store.css.scss)
 <!SLIDE smaller transition=fade>
 
 # Wrzucamy produkt do koszyka
