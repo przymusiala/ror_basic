@@ -61,5 +61,30 @@
 
 <!SLIDE small transition=fade>
 # Załadowanie migracji
-$ rake db:migrate
-$ rails server
+  
+    $ rake db:migrate
+    $ rails server
+
+
+<!SLIDE small transition=fade>
+# Stylowanie widoków
+<!SLIDE small transition=fade>
+
+
+* [formularz] (http://media.pragprog.com/titles/rails4/code/rails32/depot_a/app/views/products/_form.html.erb)
+umieszczamy w app/views/products
+
+* [style] (http://media.pragprog.com/titles/rails4/code/rails32/depot_a/app/assets/stylesheets/products.css.scss)
+umieszczamy w app/assets/stylesheets/
+
+* [listing] (http://media.pragprog.com/titles/rails4/code/rails32/depot_a/app/views/products/index.html.erb)
+umieszczamy w app/views/products
+
+
+
+<!SLIDE bullets incremental small transition=fade>
+# Zadania
+
+* [Gitignore] (http://media.pragprog.com/titles/rails4/code/rails32/depot_a/.gitignore) 
+
+* [Data Seed] (http://media.pragprog.com/titles/rails4/code/rails32/depot_a/db/seeds.rb)
