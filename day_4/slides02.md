@@ -4,4 +4,8 @@
 
 <!SLIDE transition=fade>
 
-# 
+# Paginacja
+
+<!SLIDE transition=fade>
+
+# Strumienie danych

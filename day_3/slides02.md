@@ -115,7 +115,7 @@
         </tr>
       </table>
 
-[CSS] (https://github.com/przymusiala/ror_basic/blob/master/assets/carts.css.scss)
+[CSS] (https://github.com/przymusiala/ror_basic/blob/master/day_3/assets/carts.css.scss)
 
 <!SLIDE smaller transition=fade>
 

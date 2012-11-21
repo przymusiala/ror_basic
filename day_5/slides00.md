@@ -2,7 +2,7 @@
 
 # Dzień piąty #
 
-<!SLIDE small transition=fade>
+<!SLIDE smaller bullets incremental transition=fade>
 
 # Plan na dziś #
   

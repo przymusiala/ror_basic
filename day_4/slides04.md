@@ -4,4 +4,4 @@
 
 <!SLIDE transition=fade>
 
-# 
+# Ciekawe gemy

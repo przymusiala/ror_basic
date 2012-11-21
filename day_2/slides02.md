@@ -79,13 +79,10 @@
 <!SLIDE bullets incremental transition=fade>
 
 
-* [Formularz] (https://github.com/przymusiala/ror_basic/blob/master/assets/_form.html.erb) umieszczamy w app/views/products
-* [Style] (https://github.com/przymusiala/ror_basic/blob/master/assets/products.css.scss) umieszczamy w app/assets/stylesheets
-* [Listing] (https://github.com/przymusiala/ror_basic/blob/master/assets/index.html.erb) umieszczamy w app/views/products
+* [Formularz] (https://github.com/przymusiala/ror_basic/blob/master/day_2/assets/_form.html.erb) umieszczamy w app/views/products
+* [Style] (https://github.com/przymusiala/ror_basic/blob/master/day_2/assets/products.css.scss) umieszczamy w app/assets/stylesheets
+* [Listing] (https://github.com/przymusiala/ror_basic/blob/master/day_2/assets/index.html.erb) umieszczamy w app/views/products
 
 <!SLIDE bullets incremental small transition=fade>
 
 # Zadania
-
-* [Gitignore] (http://media.pragprog.com/titles/rails4/code/rails32/depot_a/.gitignore) 
-* [Data Seed] (http://media.pragprog.com/titles/rails4/code/rails32/depot_a/db/seeds.rb)
