@@ -8,7 +8,7 @@
 
 <!SLIDE transition=fade>
 
-## Plik manifestowy Javascriptów
+## Plik manifestowy JavaScript'ów
 
     @@@ ruby
       # assets/javascripts/application.js
@@ -70,3 +70,4 @@
 <!SLIDE transition=fade>
 
 # Efekty wizualne w JavaScript
+[jQuery UI] (http://jqueryui.com/)
