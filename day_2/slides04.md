@@ -81,7 +81,6 @@
 
       <body class="<%= controller.controller_name %>">
         <div id="banner">
-          <%= image_tag("logo.png") %>
           <%= @page_title || "Nasza księgarnia" %>
         </div>
         <div id="columns">

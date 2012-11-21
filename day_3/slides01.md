@@ -163,6 +163,8 @@
 # Zmiana migracji
 
     @@@ ruby
+      # db/migrate/........rb
+
       class AddQuantityToLineItems < ActiveRecord::Migration
         def change
           add_column :line_items,
@@ -216,3 +218,4 @@
 # Czas na reset :)
 
     $ rake db:migrate:reset
+    $ rake db:fixtures:load

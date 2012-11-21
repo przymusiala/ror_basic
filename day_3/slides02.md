@@ -43,7 +43,7 @@
       <ul>
         <% @cart.line_items.each do |item| %>
           <li>
-            <%= item.quantity %>
+      ➤    <%= item.quantity %>
             &times;
             <%= item.product.title %>
           </li>
@@ -61,13 +61,13 @@
       # app/controllers/carts_controller.rb
       
       def destroy
-        @cart = current_cart
-        @cart.destroy
-        session[:cart_id] = nil
+      ➤ @cart = current_cart
+      ➤ @cart.destroy
+      ➤ session[:cart_id] = nil
 
         respond_to do |format|
-          format.html { redirect_to store_url,
-            notice: 'Wyczyszczono koszyk' }
+      ➤  format.html { redirect_to store_url,
+      ➤    notice: 'Wyczyszczono koszyk' }
           format.json { head :no_content }
         end
       end
@@ -94,6 +94,8 @@
 # Wyświetlmy sumę w koszyku
 
     @@@ html
+      <!-- app/views/cart/show.html.erb -->
+
       <h2>Twój koszyk</h2>
       <table>
         <% @cart.line_items.each do |item| %>
@@ -114,3 +116,18 @@
       </table>
 
 [CSS] (https://github.com/przymusiala/ror_basic/blob/master/assets/carts.css.scss)
+
+<!SLIDE smaller transition=fade>
+
+# Teraz po polsku
+
+* Pobieramy [pl.yml] (https://raw.github.com/svenfuchs/rails-i18n/master/rails/locale/pl.yml)
+* Wrzucamy pl.yml do config/locales/
+* W config/application.rb ustawiamy język polski
+        config.i18n.default_locale = :pl
+* Resetujemy serwer (ctrl + c)
+
+<!SLIDE smaller transition=fade>
+
+# Przetestujmy to
+
