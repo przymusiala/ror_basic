@@ -41,6 +41,7 @@
 # Pozycja w koszyku
 
     $ rails generate scaffold line_item product_id:integer cart_id:integer
+    $ rake db:migrate
 
 <!SLIDE small transition=fade>
 
@@ -110,24 +111,27 @@
 
 # Wrzucamy produkt do koszyka
     @@@ ruby
-      # app/controllers/line_items_controller.rb
+      def create
+        # app/controllers/line_items_controller.rb
 
-      ➤ @cart = current_cart
-      ➤ product = Product.find(params[:product_id])
-      ➤ @line_item = @cart.line_items.build
-      ➤ @line_item.product = product
+        ➤ @cart = current_cart
+        ➤ product = Product.find(params[:product_id])
+        ➤ @line_item = @cart.line_items.build
+        ➤ @line_item.product = product
 
-      respond_to do |format|
-        if @line_item.save
-          ➤ format.html { redirect_to @line_item.cart,
-            notice: 'Dodano poprawnie.' }
-          format.json { render json: @line_item,
-            status: :created, location: @line_item }
-        else
-          format.html { render action: "new" }
-          format.json { render json: @line_item.errors,
-            status: :unprocessable_entity }
+        respond_to do |format|
+          if @line_item.save
+            ➤ format.html { redirect_to @line_item.cart,
+              notice: 'Dodano poprawnie.' }
+            format.json { render json: @line_item,
+              status: :created, location: @line_item }
+          else
+            format.html { render action: "new" }
+            format.json { render json: @line_item.errors,
+              status: :unprocessable_entity }
+          end
         end
+
       end
 
 <!SLIDE smaller transition=fade>
