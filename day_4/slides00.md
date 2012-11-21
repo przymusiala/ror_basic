@@ -7,8 +7,8 @@
 # Plan na dziś #
   
   * Obsługa zamówienia
-  * Paginacja
   * Strumienie danych
+  * Paginacja
   * Konfiguracja środowiska do wysyłania e-maili
   * Tworzenie mailerów z szablonami HTML i tekstowymi
   * Ciekawe gemy
