@@ -7,7 +7,6 @@
 # Plan na dziś #
   
   * Obsługa zamówienia
-  * Wyświetlanie błędów walidacji
   * Paginacja
   * Strumienie danych
   * Konfiguracja środowiska do wysyłania e-maili
