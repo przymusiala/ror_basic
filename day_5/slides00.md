@@ -6,4 +6,7 @@
 
 # Plan na dziś #
   
-  * 
+  * Konto użytkownika
+  * Autentykacja użytkownika
+  * Autoryzacja użytkownika (ograniczenie dostępu).
+  * Wykorzystanie konsoli (rails console)
