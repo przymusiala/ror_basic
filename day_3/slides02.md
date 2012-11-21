@@ -130,4 +130,3 @@
 <!SLIDE smaller transition=fade>
 
 # Przetestujmy to
-

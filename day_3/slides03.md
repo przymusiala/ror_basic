@@ -3,15 +3,16 @@
 # Część 3 #
 
 <!SLIDE transition=fade>
+
 # Modyfikacja interfejsu użytkownika
 
-
 <!SLIDE bullets incremental transition=fade>
+
 ## Tworzymy widok podglądu koszyka
 
-  * partiale
-  * renderowanie partiali
-  * zasada DRY
+  * Partiale
+  * Renderowanie partiali
+  * Zasada DRY
 
 <!SLIDE smaller transition=fade>
     
@@ -38,6 +39,7 @@
 
 
 <!SLIDE smaller transition=fade>
+
 ## Tworzymy partial z elementami koszyka
 
     @@@ html
@@ -51,16 +53,15 @@
       </tr>
 
 <!SLIDE bullets incremental smaller transition=fade>
+
 ## Renderowanie z bliska
 
     @@@ html 
-      wystarzczy poprzedni partial oraz wywołanie render
+      <!-- wystarzczy poprzedni partial oraz wywołanie render -->
 
      ➤ <%= render(@cart.line_items) %>
 
-
-
-      Zamiast pisac tyle kodu :
+      <!-- Zamiast pisac tyle kodu: -->
 
       <% @cart.line_items.each do |item| %> 
         <tr>
@@ -73,10 +74,11 @@
       <% end %>
 
 <!SLIDE transition=fade>
+
 ## A teraz napiszmy partial koszyka
 
-
 <!SLIDE smaller transition=fade>
+
 ## Definicja partialu Koszyk
 
     @@@ html
@@ -96,6 +98,7 @@
             :delete, data: { confirm: 'Czy aby na pewno?' } %>
 
 <!SLIDE transition=fade>
+
 ## Wyrenderujmy box z koszykiem w layoucie
 
 <!SLIDE smaller transition=fade>
@@ -104,26 +107,25 @@
       <!-- app/views/layouts/application.html.erb -->
 
       znajdź linie :
-      
+
       <div id="columns">
         <div id="side"> 
-          
-      
+
       poniżej dodaj te 3 linie :
 
         ➤  <div id="cart">
         ➤    <%= render @cart %>
         ➤  </div>
 
-
 <!SLIDE transition=fade>
+
 ## Ale box nam jeszcze nie zadziała bo... 
 
 <!SLIDE small transition=fade>
+
 ## Musimy wyszukać koszyk w kontrolerze
 
-
-    @@@ Ruby 
+    @@@ ruby 
       # app/controllers/store_controller.rb 
 
       def index
@@ -132,12 +134,14 @@
       end
 
 <!SLIDE transition=fade>
+
 ## Zmiana przepływu akcji w kontrolerze
 
 <!SLIDE smaller transition=fade>
+
 ## Po zapisaniu koszyka przekierowujemy do strony głownej sklepu.
 
-    @@@ Ruby 
+    @@@ ruby
       # app/controllers/line_items_controller.rb
 
       respond_to do |format| 
@@ -147,12 +151,12 @@
         end
       end
 
-
 <!SLIDE transition=fade>
+
 ## Praca z AJAXem czystym relaksem
 
-
 <!SLIDE smaller transition=fade>
+
 ## Dodajemy przycisk w widoku sklepu
 
     @@@ html
@@ -162,26 +166,27 @@
         <%= number_to_currency(product.price) %>
       </span> 
 
-     ➤ <%= button_to 'Do koszyka', 
+      ➤ <%= button_to 'Do koszyka', 
       line_items_path(product_id: product), remote: true %>
 
 <!SLIDE smaller transition=fade>
+
 ## Dodajemy obslugę ajaxa w kontrolerze
 
-    @@@ Ruby
-    
-    # app/controllers/line_items_controller.rb
-    # def create
+    @@@ ruby
+      # app/controllers/line_items_controller.rb
+      # def create
 
-    respond_to do |format| 
-      if @line_item.save
-        format.html { redirect_to store_url }
+      respond_to do |format| 
+        if @line_item.save
+          format.html { redirect_to store_url }
       ➤  format.js
 
 <!SLIDE smaller transition=fade>
+
 ## Tworzymy plik JS
+
     @@@ html
       <!-- app/views/app/views/line_items/create.js.erb -->
 
     ➤  $('#cart').html("<%=j render @cart %>");
-

@@ -24,6 +24,9 @@
       class ApplicationController < ActionController::Base
 
         protect_from_forgery
+
+        # Dajmy dostęp w widoku
+        helper_method :current_cart
         
         private
 
