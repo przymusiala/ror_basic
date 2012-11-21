@@ -56,7 +56,7 @@
     @@@ html 
       wystarzczy poprzedni partial oraz wywołanie render
 
-      <%= render(@cart.line_items) %>
+     ➤ <%= render(@cart.line_items) %>
 
 
 
@@ -111,9 +111,9 @@
       
       poniżej dodaj te 3 linie :
 
-          <div id="cart">
-            <%= render @cart %>
-          </div>
+        ➤  <div id="cart">
+        ➤    <%= render @cart %>
+        ➤  </div>
 
 
 <!SLIDE transition=fade>
@@ -128,7 +128,7 @@
 
       def index
         @products = Product.order(:title) 
-        @cart = current_cart
+      ➤  @cart = current_cart
       end
 
 <!SLIDE transition=fade>
@@ -142,7 +142,7 @@
 
       respond_to do |format| 
         if @line_item.save
-          format.html { redirect_to store_url }    # tutaj zmiana
+        ➤  format.html { redirect_to store_url } 
           format.json { render json: @line_item,
         end
       end
@@ -162,9 +162,7 @@
         <%= number_to_currency(product.price) %>
       </span> 
 
-      <!-- dodajcie poniższe linie -->
-
-      <%= button_to 'Do koszyka', 
+     ➤ <%= button_to 'Do koszyka', 
       line_items_path(product_id: product), remote: true %>
 
 <!SLIDE smaller transition=fade>
@@ -178,12 +176,12 @@
     respond_to do |format| 
       if @line_item.save
         format.html { redirect_to store_url }
-        format.js  # tu dodajemy
+      ➤  format.js
 
 <!SLIDE smaller transition=fade>
 ## Tworzymy plik JS
     @@@ html
       <!-- app/views/app/views/line_items/create.js.erb -->
 
-      $('#cart').html("<%=j render @cart %>");
+    ➤  $('#cart').html("<%=j render @cart %>");
 
