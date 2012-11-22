@@ -32,12 +32,14 @@
 
     @@@ Ruby
       # config/routes.rb
+      
       resources :products do
         get 'who_bought', on: :member
       end
 
-
-      # products_controller.rb na końcu
+      # app/controllers/products_controller.rb
+      # na końcu:
+      
       def who_bought
         @product = Product.find(params[:id])
         respond_to do |format|
@@ -48,6 +50,7 @@
              (include: :orders) }
         end
       end
+    $ rake routes
 
 <!SLIDE transition=fade>
 

@@ -43,6 +43,8 @@
           redirect_to store_url, notice: "Koszyk jest pusty"
       ➤   return
         end
+
+        # .....
       end
 
 <!SLIDE smaller transition=fade>
@@ -74,6 +76,8 @@
 # Walidacje w zamówieniu
     
     @@@ ruby
+      # /app/models/order.rb
+
       validates :name, :address, :email, presence: true
       validates :pay_type, inclusion: PAYMENT_TYPES
 
@@ -123,13 +127,13 @@
         respond_to do |format|
           if @order.save
       ➤    Cart.destroy(session[:cart_id])
-            session[:cart_id] = nil
-            format.html { redirect_to store_url,
+      ➤    session[:cart_id] = nil
+      ➤    format.html { redirect_to store_url,
               notice: 'Dziękujemy.' }
             format.json { render json: @order, 
               status: :created, location: @order }
           else
-            @cart = current_cart
+      ➤     @cart = current_cart
             format.html { render action: "new" }
             format.json { render json: @order.errors,
               status: :unprocessable_entity }
