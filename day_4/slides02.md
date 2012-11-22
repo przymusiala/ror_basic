@@ -30,7 +30,7 @@
 # JSON & XML
 [json_builder] (https://github.com/dewski/json_builder)
 
-    @@@ Ruby
+    @@@ ruby
       # config/routes.rb
       
       resources :products do
@@ -38,16 +38,17 @@
       end
 
       # app/controllers/products_controller.rb
-      # na końcu:
       
       def who_bought
         @product = Product.find(params[:id])
         respond_to do |format|
           format.atom
-          format.xml { render xml: @product.to_xml 
-             (include: :orders) }
-          format.json { render json: @product.to_json
-             (include: :orders) }
+          format.xml { render xml: @product.to_xml(
+              include: :orders
+            ) }
+          format.json { render json: @product.to_json(
+              include: :orders
+            ) }
         end
       end
     $ rake routes
@@ -56,8 +57,6 @@
 
 # http://localhost:3000/
 # products/1/who_bought.json
-
-
 
 <!SLIDE transition=fade>
 
@@ -68,19 +67,9 @@
 # Od przybytku głowa nie boli?!
 ## ... Czyli jak ogarnąć dużo obiektów
 
-  * konfiguracja środowiska
-  * jak rails wysyła maile ? 
-  * szablony html
-
-<!SLIDE bullets incremental transition=fade>
-
-# 
-## 
-
-
 <!SLIDE transition=fade>
 
-    @@@ Ruby
+    @@@ ruby
       # Gemfile
 
       gem 'will_paginate', '~> 3.0'
@@ -88,27 +77,26 @@
       $ bundle install
 
 <!SLIDE smaller transition=fade>
+
 # Skrypt ładujący dane
 
-    @@@ Ruby
+    @@@ ruby
     # script/load_orders.rb
 
     Order.transaction do 
       (1..100).each do |i|
         Order.create(name: "Klient #{i}", 
         address: "Ulica Dluga #{i} ", 
-        email: "klient-#{i}@example.com", pay_type: "Check")
+        email: "klient-#{i}@example.com", pay_type: "Przelew")
       end 
     end
 
-
     $ rails runner script/load_orders.rb
-
 
 <!SLIDE smaller transition=fade>
 # Paginacja w kontrolerze
 
-    @@@ Ruby
+    @@@ ruby
     # app/controllers/orders_controller.rb
 
     def index
@@ -118,7 +106,7 @@
 <!SLIDE smaller transition=fade>
 # Paginacja na widoku
 
-    @@@ Ruby
+    @@@ ruby
     # app/views/orders/index.html.erb
 
     <%= link_to 'Nowe Zamówienie', new_order_path %> 
