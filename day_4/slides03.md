@@ -4,21 +4,22 @@
 
 <!SLIDE bullets incremental transition=fade>
 
-# Emaile
-## Poradnik młodego spammera 
+# e-maile
+## Czyli poradnik młodego spammera 
 
-  * * konfiguracja środowiska
-  * * jak rails wysyła maile ? 
-  * * szablony html
+  * Konfiguracja środowiska
+  * Jak rails'y wysyłają maile? 
+  * Szablony html
 
 <!SLIDE bullets incremental transition=fade>
 
 # Hej czy nie wiecie? 
 
-  * * jakie znacie protokoły obsługujące maile ?
-  * * jak system operacyjny wysyła maile ?
+  * Jakie znacie protokoły obsługujące maile?
+  * Jak system operacyjny wysyła maile?
 
 <!SLIDE smaller transition=fade>
+
 # Konfiguracja środowiska
 
     @@@ ruby
@@ -38,6 +39,13 @@
         authentication: "plain", user_name: "dave", 
         password: "secret", enable_starttls_auto: true 
       }
+
+<!SLIDE commandline incremental transition=fade>
+
+# Instalacja sendmail'a
+### Czyli pierwszy krok by zostać [hackerem] (https://www.youtube.com/results?hl=pl&tok=PaRdk5uu4GVYyKkHeIhY-A&cp=6&gs_id=6&xhr=t&q=emacsem+przez+sendmail&newwindow=1&bav=on.2,or.r_gc.r_pw.r_cp.r_qf.&bpcl=38897761&ion=1&biw=1680&bih=933&um=1&ie=UTF-8&sa=N&tab=w1&gl=PL&authuser=0). Uwaga: wysłanie maila lokalnie trwa i trwa...
+
+    $ sudo apt-get install sendmail-bin
 
 <!SLIDE smaller transition=fade>
 
@@ -142,13 +150,17 @@
 
     @@@ html
       
-      <#!-- app/views/order_notifier/shipped.html.erb --> 
+      <!-- app/views/order_notifier/shipped.html.erb --> 
       
-      <h3>Księgarnia Śląska - Zamówienie</h3> <p>
+      <h3>Księgarnia Śląska - Zamówienie</h3>
+      <p>
         Właśnie wysłaliśmy Twoje zamówienie:
-      </p> <table>
-      <tr><th colspan="2">Il.</th>
-      <th>Opis</th></tr> 
+      </p>
+      <table>
+      <tr>
+        <th colspan="2">Il.</th>
+        <th>Opis</th>
+      </tr> 
         <%= render @order.line_items %>
       </table>
 
@@ -158,8 +170,7 @@
 ## Nie musimy nic robić... 
 
     @@@ html
-
-      <#!-- app/views/line_items/_line_item.html.erb --> 
+      <!-- app/views/line_items/_line_item.html.erb --> 
 
       <% if line_item == @current_item %> 
         <tr id="current_item">
