@@ -6,7 +6,6 @@
 
 # Plan na dziś #
   
-  * Konto użytkownika
-  * Autentykacja użytkownika
-  * Autoryzacja użytkownika (ograniczenie dostępu).
-  * Wykorzystanie konsoli (rails console)
+  * Konto użytkownika i autentykacja - [devise] (https://github.com/plataformatec/devise)
+  * Autoryzacja użytkownika - [cancan] (https://github.com/ryanb/cancan)
+  * __Klasówka__ __;)__

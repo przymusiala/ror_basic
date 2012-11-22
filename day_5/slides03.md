@@ -4,4 +4,4 @@
 
 <!SLIDE transition=fade>
 
-# 
+# __Klasówka__ __;)__
