@@ -26,6 +26,8 @@
       # config/environments/development.rb
       
       ➤ config.action_mailer.delivery_method = :sendmail
+      ➤ config.action_mailer.perform_deliveries = true
+      ➤ config.action_mailer.raise_delivery_errors = true
 
       lub
 
@@ -164,7 +166,9 @@
       <% else %>
         <tr>
       <% end %>
-        <td><%= line_item.quantity %>&times;</td>
-        <td><%= line_item.product.title %></td>
-        <td class="item_price"><%= number_to_currency(line_item.total_price) %></td>
+          <td><%= line_item.quantity %>&times;</td>
+          <td><%= line_item.product.title %></td>
+          <td class="item_price">
+            <%= number_to_currency(line_item.total_price) %>
+          </td>
       </tr> 

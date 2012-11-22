@@ -2,7 +2,7 @@
 
 # Część 4 #
 
-<!SLIDE  bullets incremental transition=fade>
+<!SLIDE small bullets incremental transition=fade>
 
 # Ciekawe gemy
 
@@ -10,4 +10,5 @@
   * [paperclip - github] (https://github.com/thoughtbot/paperclip) - załączniki
   * [twitter bootstrap - github] (https://github.com/seyhunak/twitter-bootstrap-rails) - wygląd strony
   * [spree - projekt] (http://spreecommerce.com/) | [spree - github] (https://github.com/spree/spree) - sklep e-commerce
-  * [friendly_id] (https://github.com/norman/friendly_id) - przyjazne URLe
+  * [friendly_id] (https://github.com/norman/friendly_id) - przyjazne URL'e
+  * [CanCan] (https://github.com/ryanb/cancan) - proste uprawnienia
