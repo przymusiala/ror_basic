@@ -88,6 +88,7 @@
         Order.create(name: "Klient #{i}", 
         address: "Ulica Dluga #{i} ", 
         email: "klient-#{i}@example.com", pay_type: "Przelew")
+        puts "Zapisałem nowe zamówienie nr #{i}"
       end 
     end
 
@@ -106,8 +107,8 @@
 <!SLIDE smaller transition=fade>
 # Paginacja na widoku
 
-    @@@ ruby
-    # app/views/orders/index.html.erb
+    @@@ html
+    <!-- app/views/orders/index.html.erb -->
 
     <%= link_to 'Nowe Zamówienie', new_order_path %> 
     ➤ <p><%= will_paginate @orders %></p>

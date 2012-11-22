@@ -2,15 +2,10 @@
 
 # Część 3 #
 
-<!SLIDE transition=fade>
+<!SLIDE bullets incremental transition=fade>
 
 # Emaile
 ## Poradnik młodego spammera 
-
-<!SLIDE bullets incremental transition=fade>
-
-# Od przybytku głowa nie boli?!
-## ... Czyli jak ogarnąć dużo obiektów
 
   * * konfiguracja środowiska
   * * jak rails wysyła maile ? 
@@ -18,19 +13,19 @@
 
 <!SLIDE bullets incremental transition=fade>
 
-# Hej czy nie wiecie ? 
+# Hej czy nie wiecie? 
 
   * * jakie znacie protokoły obsługujące maile ?
   * * jak system operacyjny wysyła maile ?
 
-
 <!SLIDE smaller transition=fade>
 # Konfiguracja środowiska
-    @@@ Ruby
+
+    @@@ ruby
 
       # config/environments/development.rb
       
-      config.action_mailer.delivery_method = :sendmail
+      ➤ config.action_mailer.delivery_method = :sendmail
 
       lub
 
@@ -43,36 +38,38 @@
       }
 
 <!SLIDE smaller transition=fade>
+
 # Generujemy mailery
-    @@@ Ruby
       
-      $rails generate mailer OrderNotifier received 
-          shipped create app/mailers/order_notifier.rb
+    $ rails generate mailer OrderNotifier received shipped 
       
-      ===
+    ===
 
-        invoke erb
-        create app/views/order_notifier
-        create    app/views/order_notifier/received.text.erb
-        create    app/views/order_notifier/shipped.text.erb
-        invoke  test_unit
-        create    test/functional/order_notifier_test.rb
-
+      invoke erb
+      create app/mailers/order_notifier.rb
+      create app/views/order_notifier
+      create    app/views/order_notifier/received.text.erb
+      create    app/views/order_notifier/shipped.text.erb
+      invoke  test_unit
+      create    test/functional/order_notifier_test.rb
 
 <!SLIDE smaller transition=fade>
+
 # Konfiguracja maila
-    @@@ Ruby
+
+    @@@ ruby
 
       # app/mailers/order_notifier.rb
 
       class OrderNotifier < ActionMailer::Base
-        ➤ default from: 
+      ➤ default from: 
             'Ksiegarnia Śląska <ksiegarnia@slaska.pl>'
 
-
 <!SLIDE smaller transition=fade>
+
 # Szablony emaili
-    @@@ Ruby
+
+    @@@ ruby
 
       # app/views/order_notifier/received.text.erb
 
@@ -83,11 +80,13 @@
       <%= render @order.line_items %>
 
       Usiądź wygodnie i odpocznij sobie. Kiedy skompletujemy
-       zamówienie poinformujemy Cię o tym mailem.
+      zamówienie poinformujemy Cię o tym mailem.
 
 <!SLIDE smaller transition=fade>
+
 # Konfiguracja maila c.d.
-    @@@ Ruby
+
+    @@@ ruby
 
       # app/views/line_items/_line_item.text.erb
 
@@ -102,8 +101,11 @@
           Potwierdzenie zamówienia'
       end
 <!SLIDE smaller transition=fade>
+
 # Generowanie emaila
-    @@@ Ruby
+
+    @@@ ruby
+
       # app/controllers/orders_controller.rb
 
       respond_to do |format| 
@@ -111,25 +113,31 @@
           Cart.destroy(session[:cart_id])
           session[:cart_id] = nil
         
-          ➤ OrderNotifier.received(@order).deliver
+      ➤  OrderNotifier.received(@order).deliver
         
           format.html { redirect_to store_url, notice: 
-            'Thank you for your order.' }
+            'Dziękujemy za zamówienie.' }
           format.json { render json: @order, 
           status: :created, location: @order }
 
 <!SLIDE smaller transition=fade>
+
 # Tworzymy wysyłkę zamówienia
-    @@@ Ruby
+
+    @@@ ruby
+
       # app/mailers/order_notifier.rb
 
       def shipped(order)
         @order = order
         mail to: order.email, subject: 'Księgarnia Śląska 
-                - zamówienie zostało wysłane'
+          - zamówienie zostało wysłane'
       end
+
 <!SLIDE smaller transition=fade>
+
 # Definiujemy widok wysyłki
+
     @@@ html
       
       <#!-- app/views/order_notifier/shipped.html.erb --> 
@@ -143,10 +151,12 @@
       </table>
 
 <!SLIDE smaller transition=fade>
+
 # Partiale zawsze się nam przydają
 ## Nie musimy nic robić... 
 
     @@@ html
+
       <#!-- app/views/line_items/_line_item.html.erb --> 
 
       <% if line_item == @current_item %> 
@@ -154,7 +164,7 @@
       <% else %>
         <tr>
       <% end %>
-      <td><%= line_item.quantity %>&times;</td>
-      <td><%= line_item.product.title %></td>
-      <td class="item_price"><%= number_to_currency(line_item.total_price) %></td>
-      </tr>  
+        <td><%= line_item.quantity %>&times;</td>
+        <td><%= line_item.product.title %></td>
+        <td class="item_price"><%= number_to_currency(line_item.total_price) %></td>
+      </tr> 
