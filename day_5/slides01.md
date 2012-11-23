@@ -19,7 +19,7 @@
       # Gemfile
       gem 'devise'
 
-      # w konsoli
+      # terminalu
 
       $ bundle      
       $ rails generate devise:install
