@@ -21,7 +21,7 @@
       # Gemfile
       gem 'devise'
 
-      # w konsoli
+      # terminalu
 
 <!SLIDE commandline incremental transition=fade>
 
