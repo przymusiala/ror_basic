@@ -44,7 +44,7 @@
       $ rake db:migrate
 
       # app/models/user.rb   ->   Dołączamy moduły
-        :confirmable, :lockable, :timeoutable
+        :lockable, :timeoutable
 
 <!SLIDE smaller transition=fade>
 # Devise
